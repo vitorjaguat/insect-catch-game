@@ -53,7 +53,7 @@ h1 {
     margin-top: -100vh;
 }
 
-.insects-list {
+.lang-list, .insects-list {
     display:flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -61,11 +61,11 @@ h1 {
     padding: 0;
 }
 
-.insects-list li {
+.lang-list, .insects-list li {
     margin: 10px;
 }
 
-.choose-insect-btn {
+.choose-lang-btn, .choose-insect-btn {
     background-color: transparent;
     border: 2px solid #fff;
     color: #fff;
@@ -75,16 +75,16 @@ h1 {
     height: 150px;
 }
 
-.choose-insect-btn:hover {
+.choose-lang-btn:hover, .choose-insect-btn:hover {
     background-color: #fff;
     color: #516dff;
 }
 
-.choose-insect-btn:active {
+.choose-lang-btn:active, .choose-insect-btn:active {
     background-color: rgba(255,255,255,0.7);
 }
 
-.choose-insect-btn img {
+.choose-lang-btn img, .choose-insect-btn img {
     width: 100px;
     height: 100px;
     object-fit: contain;

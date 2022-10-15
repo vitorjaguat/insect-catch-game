@@ -1,4 +1,5 @@
 const screens = document.querySelectorAll('.screen');
+const choose_lang_btns = document.querySelectorAll('.choose-lang-btn');
 const choose_insect_btns = document.querySelectorAll('.choose-insect-btn');
 const start_btn = document.getElementById('start-btn');
 const game_container = document.getElementById('game-container');
@@ -9,17 +10,38 @@ let seconds = 0;
 let score = 0;
 let selected_insect = {};
 
-// screens[0].classList.add('up');
+let selected_lang = '';
+// const textsPT = document.querySelectorAll('[data-pt]');
 
-start_btn.addEventListener('click', () => screens[0].classList.add('up'));
 
+
+//Choose language screen:
+choose_lang_btns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        screens[0].classList.add('up');
+        selected_lang = btn.dataset.lang;
+        translateDataset(selected_lang);
+    })
+})
+
+function translateDataset(language) {
+    if(selected_lang === language){
+        const texts = document.querySelectorAll(`[data-${language}]`);
+        texts.forEach(text => text.textContent = text.dataset[language]);
+    }
+}
+
+//Start screen:
+start_btn.addEventListener('click', () => screens[1].classList.add('up'));
+
+//Choose insect screen:
 choose_insect_btns.forEach(btn => {
     btn.addEventListener('click', () => {
         const img = btn.querySelector('img');
         const src = img.getAttribute('src');
         const alt = img.getAttribute('alt');
         selected_insect = { src, alt };
-        screens[1].classList.add('up');
+        screens[2].classList.add('up');
         setTimeout(createInsect, 1000);
         startGame();
     })
@@ -35,7 +57,7 @@ function increaseTime() {
     let s = seconds % 60;
     m = m < 10 ? `0${m}` : m;
     s = s < 10 ? `0${s}` : s;
-    timeEl.innerHTML = `Time: ${m}:${s}`;
+    timeEl.innerHTML = selected_lang === 'en' ? `Time: ${m}:${s}` : `${timeEl.dataset[selected_lang]} ${m}:${s}`;
     seconds++;
 }
 
@@ -77,5 +99,5 @@ function increaseScore() {
     if(score > 999) {
         message.classList.add('visible');
     }
-    scoreEl.innerHTML = `Score: ${score}`;
+    scoreEl.innerHTML = selected_lang === 'en' ? `Score: ${score}` : `${scoreEl.dataset[selected_lang]} ${score}`;
 }

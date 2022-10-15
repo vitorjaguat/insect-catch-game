@@ -15,19 +15,19 @@
     <div class="screen">
         <ul class="lang-list">
             <li>
-                <button class="choose-lang-btn">
+                <button class="choose-lang-btn" data-lang="en">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Flag_of_the_United_Kingdom_%282-3%29.svg" alt="ENGLISH">
                     <p>ENGLISH</p>
                 </button>
             </li>
             <li>
-                <button class="choose-lang-btn">
+                <button class="choose-lang-btn" data-lang="pt">
                     <img src="https://upload.wikimedia.org/wikipedia/en/0/05/Flag_of_Brazil.svg" alt="PORTUGUÊS">
                     <p>PORTUGUÊS</p>
                 </button>
             </li>
             <li>
-                <button class="choose-lang-btn">
+                <button class="choose-lang-btn" data-lang="zh">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Flag_of_the_People%27s_Republic_of_China.svg" alt="中文">
                     <p>中文</p>
                 </button>
@@ -36,22 +36,22 @@
     </div>
 
     <div class="screen">
-        <h1>Catch The Insect</h1>
-        <button class="btn" id="start-btn">Play Game</button>
+        <h1 id="start-text" data-pt="Pegue o Inseto" data-zh="捉昆虫">Catch The Insect</h1>
+        <button class="btn" id="start-btn" data-pt="Jogar" data-zh="玩游戏">Play Game</button>
     </div>
 
     <div class="screen">
-        <h1>What is your "favorite" insect?</h1>
+        <h1 data-pt="Qual o seu inseto 'favorito'?" data-zh="你“最喜欢”的昆虫是什么？">What is your "favorite" insect?</h1>
         <ul class="insects-list">
             <li>
                 <button class="choose-insect-btn">
-                    <p>Fly</p>
+                    <p data-pt="Mosca" data-zh="蝇子">Fly</p>
                     <img src="http://pngimg.com/uploads/fly/fly_PNG3946.png" alt="fly">
                 </button>
             </li>
             <li>
                 <button class="choose-insect-btn">
-                  <p>Mosquito</p>
+                  <p data-pt="Mosquito" data-zh="蚊子">Mosquito</p>
                   <img
                      src="http://pngimg.com/uploads/mosquito/mosquito_PNG18175.png"
                      alt="mosquito"
@@ -60,7 +60,7 @@
               </li>
               <li>
                 <button class="choose-insect-btn">
-                  <p>Spider</p>
+                  <p data-pt="Aranha" data-zh="蜘蛛">Spider</p>
                   <img
                      src="http://pngimg.com/uploads/spider/spider_PNG12.png"
                      alt="spider"
@@ -69,7 +69,7 @@
               </li>
               <li>
                 <button class="choose-insect-btn">
-                  <p>Roach</p>
+                  <p data-pt="Barata" data-zh="蟑螂">Roach</p>
                   <img
                      src="http://pngimg.com/uploads/roach/roach_PNG12163.png"
                      alt="roach"
@@ -80,9 +80,9 @@
     </div>
 
     <div class="screen game-container" id="game-container">
-        <h3 id="time" class="time">Time: 00:00</h3>
-        <h3 id="score" class="score">Score: 0</h3>
-        <h5 id="message" class="message">Aren't you annoyed yet? <br>
+        <h3 id="time" class="time" data-pt="Tempo:" data-zh="时间：">Time: 00:00</h3>
+        <h3 id="score" class="score" data-pt="Pontos:" data-zh="比分：">Score: 0</h3>
+        <h5 id="message" class="message" data-pt="Você ainda não está com nojo?" data-zh="你还不厌烦吗？">Aren't you annoyed yet? <br>
         </h5>
 
         <!-- <div class="insect">
