@@ -49,6 +49,7 @@ choose_insect_btns.forEach(btn => {
 
 function startGame() {
     setInterval(increaseTime, 1000);
+    setInterval(createInsect, 4700);
 }
 
 //Stopwatch Cronômetro:
@@ -77,8 +78,8 @@ function createInsect() {
 function getRandomLocation() {
     const width = window.innerWidth;
     const height = window.innerHeight;
-    const x = Math.random() * (width - 200) + 100;
-    const y = Math.random() * (height - 200) + 100;
+    const x = Math.random() * (width - 100) + 50;
+    const y = Math.random() * (height - 200) + 150;
     return { x, y };
 }
 
@@ -91,7 +92,7 @@ function catchInsect() {
 
 function addInsects() {
     setTimeout(createInsect, 1000);
-    setTimeout(createInsect, 1500);
+    setTimeout(createInsect, 3500);
 }
 
 function increaseScore() {
