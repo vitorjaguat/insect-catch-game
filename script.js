@@ -21,6 +21,7 @@ choose_lang_btns.forEach(btn => {
         screens[0].classList.add('up');
         selected_lang = btn.dataset.lang;
         translateDataset(selected_lang);
+        playIntro();
     })
 })
 
@@ -32,6 +33,42 @@ function translateDataset(language) {
 }
 
 //Start screen:
+function playIntro() {
+    const introText = document.querySelector('.intro-text');
+    const introTextContent = selected_lang === 'en' ? introText.innerText : introText.dataset[selected_lang];
+    let idx = 1;
+    
+    let interval = setInterval(() => {
+        introText.innerText = introTextContent.slice(0, idx);
+        idx++;
+        if(idx > introTextContent.length) {
+            idx = 1;
+            clearInterval(interval);
+        }
+    }, 70)
+
+    setTimeout(() => start_btn.classList.remove('hidden'), 3000)
+    
+}
+
+
+// const textEl = document.getElementById('text');
+// const speedEl = document.getElementById('speed');
+// const text = 'Te amo, Antílope!';
+// let idx = 1;
+// let speed = 300 / speedEl.value;
+
+// writeText();
+
+// function writeText() {
+//     textEl.innerText = text.slice(0, idx);
+//     idx++;
+//     if(idx > text.length) {
+//         idx = 1;
+//     }
+//     setTimeout(writeText, speed)
+// }
+
 start_btn.addEventListener('click', () => screens[1].classList.add('up'));
 
 //Choose insect screen:
@@ -58,8 +95,14 @@ function increaseTime() {
     let s = seconds % 60;
     m = m < 10 ? `0${m}` : m;
     s = s < 10 ? `0${s}` : s;
-    timeEl.innerHTML = selected_lang === 'en' ? `Time: ${m}:${s}` : `${timeEl.dataset[selected_lang]} ${m}:${s}`;
-    seconds++;
+
+    if(selected_lang === 'en') {
+        timeEl.innerHTML = `Time: ${m}:${s}`;
+    } else {
+        timeEl.innerHTML = `${timeEl.dataset[selected_lang]} ${m}:${s}`
+    }
+    
+    seconds++
 }
 
 function createInsect() {

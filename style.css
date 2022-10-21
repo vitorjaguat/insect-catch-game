@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
 
 * {
     box-sizing: border-box;
 }
 
 body {
-    background-color: #516dff;
+    background-color: #e1c9a0;
     color: #fff;
-    font-family: 'Press Start 2P', sans-serif;
+    font-family: 'Kanit', sans-serif;
     height: 100vh;
     overflow: hidden;
     margin: 0;
@@ -19,13 +19,13 @@ a {
 }
 
 h1 {
-    line-height: 1.4;
+    /* line-height: 150%; */
 }
 
 .btn {
     border: 0;
     background-color: #fff;
-    color: #516dff;
+    color: #e1c9a0;
     padding: 15px 20px;
     font-family: inherit;
     cursor: pointer;
@@ -77,7 +77,7 @@ h1 {
 
 .choose-lang-btn:hover, .choose-insect-btn:hover {
     background-color: #fff;
-    color: #516dff;
+    color: #4c4c4c;
 }
 
 .choose-lang-btn:active, .choose-insect-btn:active {
@@ -89,6 +89,47 @@ h1 {
     height: 100px;
     object-fit: contain;
 }
+
+/* INTRO_TEXT */
+.intro-text-box {
+    /* background-color: rgba(255,255,255,0.1); */
+    color: rgb(114, 114, 114);
+    margin: 60px 70px auto 70px;
+    padding: 40px;
+    /* box-shadow: 0 30px 40px rgba(0,0,0,.1); */
+    line-height: 160%;
+    text-align: left;
+    width: 60%;
+    height: 15rem;
+    font-size: 1.2rem;
+    /* border: 6px rgb(135, 127, 127) dotted; */
+    /* border-radius: 2rem; */
+
+}
+
+.btn#start-btn {
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 10px;
+    width: 150px;
+    height: 60px;
+    margin-bottom: 60px;
+    transition: all 1s;
+    border-radius: 0.6rem;
+}
+
+.btn#start-btn.hidden {
+    opacity: 0;
+    transition: all 1s;
+}
+
+/* CHOOSE INSECT */
+.choose-insect-btn {
+    font-size: 0.9rem;
+    height: 160px;
+}
+
+/* GAME: */
 
 .game-container {
     position: relative;
