@@ -1,13 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap'); */
+
+:root {
+    --primary-color: rgb(206, 187, 187);
+}
+
+@font-face {
+    font-family: 'Taikong2';
+    src: url(Taikong2.ttf);
+}
 
 * {
     box-sizing: border-box;
 }
 
 body {
-    background-color: #e1c9a0;
+    background-color: var(--primary-color);
     color: #fff;
-    font-family: 'Kanit', sans-serif;
+    /* font-family: 'Kanit', sans-serif; */
+    font-family: 'Taikong2';
     height: 100vh;
     overflow: hidden;
     margin: 0;
@@ -25,7 +35,7 @@ h1 {
 .btn {
     border: 0;
     background-color: #fff;
-    color: #e1c9a0;
+    color: var(--primary-color);
     padding: 15px 20px;
     font-family: inherit;
     cursor: pointer;
@@ -150,6 +160,7 @@ h1 {
 
 .message {
     line-height: 1.7;
+    font-size: 16px;
     background-color: rgba(0,0,0,0.5);
     width: 100%;
     padding: 20px;
@@ -165,7 +176,7 @@ h1 {
 
 .message.visible {
     opacity: 1;
-    transform: translate(-50%, 150%);
+    transform: translate(-50%, 145%);
 }
 
 .insect {

@@ -140,7 +140,8 @@ function addInsects() {
 
 function increaseScore() {
     score++;
-    if(score > 999) {
+    if(score > 6) {
+        message.innerHTML = message.dataset[selected_lang];
         message.classList.add('visible');
     }
     scoreEl.innerHTML = selected_lang === 'en' ? `Score: ${score}` : `${scoreEl.dataset[selected_lang]} ${score}`;
