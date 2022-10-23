@@ -17,7 +17,7 @@ let selected_lang = '';
 
 //Choose language screen:
 choose_lang_btns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
+    btn.addEventListener('click', () => {
         screens[0].classList.add('up');
         selected_lang = btn.dataset.lang;
         translateDataset(selected_lang);
@@ -140,9 +140,18 @@ function addInsects() {
 
 function increaseScore() {
     score++;
-    if(score > 6) {
+    if(score > 19) {
         message.innerHTML = message.dataset[selected_lang];
         message.classList.add('visible');
     }
     scoreEl.innerHTML = selected_lang === 'en' ? `Score: ${score}` : `${scoreEl.dataset[selected_lang]} ${score}`;
 }
+
+window.addEventListener('load', () => {
+    seconds = 0;
+    score = 0;
+    selected_insect = {};
+    selected_lang = '';
+    screens.forEach(screen => screen.classList.remove('up'));
+    window.scrollTo(0,0);
+})

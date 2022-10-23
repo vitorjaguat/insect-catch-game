@@ -114,7 +114,6 @@ h1 {
     font-size: 1.2rem;
     /* border: 6px rgb(135, 127, 127) dotted; */
     /* border-radius: 2rem; */
-
 }
 
 .btn#start-btn {
@@ -201,7 +200,28 @@ h1 {
 }
 
 @media(max-width: 600px){
+    .intro-text-box {
+        margin: 40px 20px auto 20px;
+        padding: 10px;
+        /* box-shadow: 0 30px 40px rgba(0,0,0,.1); */
+        line-height: 120%;
+        text-align: left;
+        width: 80%;
+        height: 15rem;
+        font-size: 1rem;
+        /* border: 6px rgb(135, 127, 127) dotted; */
+        /* border-radius: 2rem; */
+    }
+    
     .time, .score {
         font-size: 0.8rem;
+    }
+
+    .score {
+        right: 30px;
+    }
+
+    .message.visible {
+        transform: translate(-50%, 30%);
     }
 }
